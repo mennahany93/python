@@ -1,0 +1,24 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+#!/bin/python3
+from sys import stdin
+x=int(input())
+phoneBook={}
+for i in range (x):
+    name , phoneNumber = input().split()
+    phoneBook[name]=phoneNumber 
+
+try:
+    while True:
+        name_to_search_for = input()
+        if name_to_search_for != " ":
+            result=phoneBook.get(name_to_search_for,"Not found")
+            if result != "Not found":
+                print (name_to_search_for + "="+ result)
+            else:
+                print (result)
+            
+
+        else:
+            break
+except EOFError:
+    pass
