@@ -1,0 +1,27 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+if __name__ == '__main__':
+    n = int(input())
+    count = 0
+    result = 0
+    binary=list(bin(n)[2:])
+    for i , value in enumerate(binary):
+        if value == "1":
+            count = count + 1
+            if result < count:
+                result = count
+        else:
+            count = 0 
+    print (result)
+
+
+    
+
