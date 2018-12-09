@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+T = int(input())
+for i in range (T):
+    first=""
+    second=""
+    S= input()
+    for y,value in enumerate(S):
+        if y %2 == 0:
+            first=first + value
+        else:
+            second=second + value
+    print (first+" "+second)
