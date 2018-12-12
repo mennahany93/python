@@ -1,0 +1,18 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+recieved_date = (input().split())
+due_date = (input().split())
+
+if due_date[2] > recieved_date[2]:
+    fine = 0
+elif int(due_date[1]) >= int(recieved_date[1]) and due_date[2] == recieved_date[2]:
+    if int(due_date[0]) >= int(recieved_date [0]):
+        fine = 0
+    else:
+        fine = 15 * (int(recieved_date[0]) - int(due_date[0]))
+elif due_date[2] == recieved_date[2] and due_date[1] != recieved_date[1] :
+    fine = 500 * (int(recieved_date[1]) - int(due_date[1]))
+else:
+    fine = 10000
+
+print (fine)
