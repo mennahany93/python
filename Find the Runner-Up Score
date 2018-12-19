@@ -1,0 +1,12 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = input().split()
+    arr.sort()
+    mxm=arr[n-1]
+    arr.remove(mxm)
+    
+
+    while mxm in arr:
+        arr.remove(mxm)
+    
+    print(arr[len(arr)-1])
