@@ -1,0 +1,23 @@
+#! /usr/bin/python3
+import os ,sys
+
+directory_name=input("Enter directory name:")
+try:
+    flist=os.listdir(directory_name)
+except FileNotFoundError:
+    print("No such directory")
+    sys.exit(1)
+
+for i in flist:
+    file_extension = os.path.splitext(i)[1][1:]
+
+    source = os.path.join(directory_name,i)
+    dest = os.path.join(directory_name,file_extension,i)
+    dir= os.path.join(directory_name,file_extension)
+
+
+    if os.path.isdir(dir):
+        os.rename(source,dest)
+    else:
+        os.mkdir(dir)
+        os.rename(source,dest)
