@@ -3,15 +3,17 @@ import os , sys
 
 ##take path of nginx access log as argument
 access_log= sys.argv[1]
-ip_list=[]
+result={}
 if os.path.isfile(access_log):
     f= open(access_log,"r")
-    s= open(access_log,"r").read()
     for i in f:
         ip=i.split(' ')[0]
-        if ip not in ip_list:
-            ip_list.append(ip)
-            s= open(access_log,"r").read()
-            print(str(ip) + " occured " + str(s.count(ip)) + " times.")
+        if ip in result:
+            result[ip] +=1
+        else:
+            result[ip] = 1
+
+    for key , value in result.items():
+        print (str(key) + " ==> " + str(value))
 else:
     print("No such file or directory")
